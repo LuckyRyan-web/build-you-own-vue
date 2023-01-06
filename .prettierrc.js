@@ -6,10 +6,10 @@ module.exports = {
     tabWidth: 4,
     overrides: [
         {
-            files: ['src/**/*.ts', 'src/**/*.js'],
+            files: ['src/**/*.ts', 'packages/**/*.ts'],
             options: {
-                parser: 'typescript',
-            },
-        },
-    ],
-};
+                parser: 'typescript'
+            }
+        }
+    ]
+}

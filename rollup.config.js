@@ -4,36 +4,43 @@ import typescript from 'rollup-plugin-typescript2'
 import resolve from '@rollup/plugin-node-resolve'
 // 解析 cjs 格式的包
 import commonjs from '@rollup/plugin-commonjs'
-// 压缩插件
-import { terser } from 'rollup-plugin-terser'
 
 import eslint from '@rollup/plugin-eslint'
 
 export default [
     {
-        input: 'src/index.ts',
+        input: 'packages/vue/index.ts',
         external: ['react'],
         plugins: [
             resolve(),
             eslint({
                 throwOnError: true,
             }),
+            // 转换 cjs 为 esm
             commonjs(),
-            typescript(),
+            typescript({
+                sourcemap: true,
+            }),
             json(),
         ],
         output: [
             {
-                file: 'dist/index.umd.js',
+                file: 'packages/vue/dist/index.umd.js',
                 format: 'umd',
-                name: 'Index',
-                plugins: [terser()],
-                banner: '/** Hello this is my utils */',
+                sourcemap: true,
+                name: 'Vue',
             },
             {
-                file: 'dist/index.es.js',
+                file: 'packages/vue/dist/index.es.js',
                 format: 'es',
-                // plugins: [terser()],
+                sourcemap: true,
+                name: 'Vue',
+            },
+            {
+                file: 'packages/vue/dist/index.js',
+                format: 'iife',
+                sourcemap: true,
+                name: 'Vue',
             },
         ],
     },
