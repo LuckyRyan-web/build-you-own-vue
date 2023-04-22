@@ -1,41 +1,42 @@
 {
-  "name": "vue-next-mini",
-  "version": "1.0.0",
-  "description": "a simple rollup template",
-  "author": "ryan-liu",
-  "main": "index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "22.0.1",
-    "@rollup/plugin-eslint": "^8.0.1",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "13.3.0",
-    "@ryan-liu/eslint-config-jsx-config": "^1.0.2",
-    "eslint": "^7.32.0",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.4.1",
-    "rollup": "^2.57.0",
-    "rollup-plugin-typescript2": "^0.30.0",
-    "tslib": "2.4.0",
-    "typescript": "4.7.4"
-  },
-  "scripts": {
-    "dev": "yarn build --watch",
-    "build": "rollup -c rollup.config.js",
-    "lint": "lint-staged"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+    "name": "vue-next-mini",
+    "version": "1.0.0",
+    "description": "build you own vue3",
+    "author": "ryan-liu",
+    "main": "index.js",
+    "license": "MIT",
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "22.0.1",
+        "@rollup/plugin-eslint": "^8.0.1",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-node-resolve": "13.3.0",
+        "@ryan-liu/eslint-config-jsx-config": "^1.0.2",
+        "@types/node": "^18.11.18",
+        "eslint": "^7.32.0",
+        "husky": "^7.0.2",
+        "lint-staged": "^11.1.2",
+        "prettier": "^2.4.1",
+        "rollup": "^2.57.0",
+        "rollup-plugin-typescript2": "^0.30.0",
+        "tslib": "2.4.0",
+        "typescript": "4.7.4"
+    },
+    "scripts": {
+        "dev": "yarn build --watch",
+        "build": "rollup -c rollup.config.js",
+        "lint": "lint-staged"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{ts,js}": [
+            "eslint --fix --quiet"
+        ],
+        "*.json": [
+            "prettier --write"
+        ]
     }
-  },
-  "lint-staged": {
-    "*.{ts,js}": [
-      "eslint --fix --quiet"
-    ],
-    "*.json": [
-      "prettier --write"
-    ]
-  }
 }

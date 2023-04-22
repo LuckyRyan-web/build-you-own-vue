@@ -9,6 +9,7 @@ importers:
       '@rollup/plugin-json': ^4.1.0
       '@rollup/plugin-node-resolve': 13.3.0
       '@ryan-liu/eslint-config-jsx-config': ^1.0.2
+      '@types/node': ^18.11.18
       eslint: ^7.32.0
       husky: ^7.0.2
       lint-staged: ^11.1.2
@@ -23,6 +24,7 @@ importers:
       '@rollup/plugin-json': 4.1.0_rollup@2.79.1
       '@rollup/plugin-node-resolve': 13.3.0_rollup@2.79.1
       '@ryan-liu/eslint-config-jsx-config': 1.0.4_oy4htde6mtsoj7flvwyyj7au6a
+      '@types/node': 18.11.18
       eslint: 7.32.0
       husky: 7.0.4
       lint-staged: 11.2.6

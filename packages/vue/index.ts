@@ -1,3 +1,5 @@
 import { isArray } from '@vue/shared'
 
-console.log('hello world', isArray([]))
+export { reactive } from '@vue/reactivity'
+
+// console.log('hello world', isArray([]))
