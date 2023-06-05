@@ -9,7 +9,7 @@ import eslint from '@rollup/plugin-eslint'
 
 export default [
     {
-        input: 'packages/vue/index.ts',
+        input: 'packages/vue/src/index.ts',
         external: ['react'],
         plugins: [
             resolve(),
